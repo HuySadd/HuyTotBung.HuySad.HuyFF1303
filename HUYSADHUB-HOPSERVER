@@ -1,0 +1,373 @@
+local FetchingUI = loadstring(game:HttpGet("https://github.com/HuySad/UiHopSV/blob/main/Ui"))()
+local ui = FetchingUI:Window({
+    Title = "My UI",
+    Logo = 126701561015836,
+    Size = UDim2.new(0, 495, 0, 380),
+    MainColor = Color3.fromRGB(0, 170, 255),
+    DropColor = Color3.fromRGB(105, 94, 255),
+    Keybind = Enum.KeyCode.RightShift -- hoặc F2
+})
+
+local TAB2 = FetchingUI.Tab:CreateTab({Title = "Teleport",Icon = 126701561015836})
+
+local AutoFarm1 = TAB2:CreateSection({Title = "Matsune hehe",Side = "Left"})
+
+AutoFarm1:CreateDropdown({
+    Title = "Auto Dropdwn",
+    List = {"Dropdown 1", "Dropdown 2", "Dropdown 3", "Dropdown 4"},
+    Value = "Dropdown 1",
+    Multi = false,
+    Callback = function()
+    end
+})
+
+
+AutoFarm1:CreateToggle({
+    Title = "Auto Toggle",
+    Value = false,
+    CallBack = function()
+    end
+})
+local spawnLabel = AutoFarm1:CreateSpawn({
+    Title = "Auto Spawn",
+    Color = Color3.fromRGB(0, 255, 0)
+})
+
+spawnLabel:SetTitle("Indra đã bị tiêu diệt!")
+spawnLabel:SetVisible(true)
+spawnLabel:SetTransparency(0.5)
+
+local para = AutoFarm1:Paragarp({
+    Title = "Auto Paragarp"
+})
+
+para:Set("Updated:\n - rip_indra: DEAD\n - Cake Queen: LIVE")
+para:SetVisible(true)
+
+AutoFarm1:CreateSlider({
+    Title = "Auto Slider",
+    Desc = "Adjust character speed",
+    Min = 1,
+    Max = 100,
+    Rounding = 0,
+    Value = 16, -- mặc định ban đầu
+    CallBack = function(value)
+
+    end
+})
+AutoFarm1:CreateSelect({
+    Title = "Auto Select",
+    Desc = "Select boss to farm",
+    Value = "Select 1",
+    List = {"Select 1", "Select 2", "Select 3"},
+    Callback = function(selected)
+        -- Xử lý boss ở đây
+    end
+})
+AutoFarm1:CreateTextbox({
+    Title = "Auto Textbox",
+    Placeholder = "Boss name...",
+    Value = "",
+    ClearText = false, -- true: xóa text sau khi nhập
+    Callback = function(text)
+
+    end
+})
+
+local imageToggle = AutoFarm1:ImageToggle({
+    Title = "Auto Toggle Image",
+    Value = true,
+    Icon = "rbxassetid://12345678",
+    CallBack = function(state)
+        print("Speed Hack Toggle:", state)
+    end
+})
+local imageInfo = AutoFarm1:CreateImage({
+    Title = "Auto Create Image",
+    Desc = "<font color='rgb(0,255,0)'>Cooldown: 1 hour</font>",
+    Icon = "rbxassetid://987654321"
+})
+AutoFarm1:ButtonImage({
+    Title = "Auto Button Image",
+    Desc = "Find Mirage Island",
+    Icon = "rbxassetid://1234567890",
+    Callback = function()
+        print("Join Mirage Clicked")
+    end
+})
+AutoFarm1:CreateButton({
+    Title = "Auto Button",
+    Callback = function()
+        print("Clicked!")
+    end
+})
+
+AutoFarm1:CreateKeybind({
+    Title = "Auto Key Bind",
+    Key = Enum.KeyCode.K,
+    Value = false,
+    Callback = function(key, state)
+        print("Pressed", key, "State:", state)
+    end
+})
+local box = AutoFarm1:Create({
+    Title = "Auto Create",
+    Desc = "Boss Dough King has appeared in Sea 3. Come in and fight!",
+    Icon = 123456789
+})
+
+box:SetVisible(true)
+box:SetTitle("Another boss <font color='rgb(0,255,0)'>has appeared!</font>")
+box:SetDesc("Please come <font color='rgb(0,255,0)'>back in 30 minutes.!</font>")
+
+local myIcon = AutoFarm1:Icon({
+    Title = "Auto Icon:",
+    Image = "rbxassetid://1234567890",
+    Color = Color3.fromRGB(255, 255, 255)
+})
+
+myIcon:SetTitle("Following: <font color='rgb(0,255,0)'>Indra</font>")
+myIcon:SetImage("rbxassetid://9876543210")
+myIcon:ImageColor(Color3.fromRGB(255, 0, 0))
+myIcon:SetVisible(true)
+
+local notfoundUI = AutoFarm1:Notfound({Title = "Auto Notfound"})
+
+task.wait(3)
+notfoundUI:SetTitle("All bosses have been destroyed 😢")
+notfoundUI:SetVisible(true)
+local myLabel = AutoFarm1:CreateLabel({
+    Title = "Auto Create Label",
+    Side = "Center"
+})
+myLabel:Set("Ready: <font color='rgb(0,255,0)'>Đã hoàn thành!</font>")
+
+local mySlider = AutoFarm1:CreateSlider({
+    Title = "Auto Slider 2",
+    Min = 0,
+    Max = 10,
+    Value = 2
+})
+
+mySlider:SetValue(5)
+mySlider:SetTitle("Speed Control")
+
+-----------------------------------------------------------------------------Cách Dùng 2------------------------------------------------------------
+-- Fetching UI Library - Complete Usage Example
+-- Tất cả element và cách sử dụng
+
+-- Load thư viện (thay URL của bạn)
+local FetchingUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/yeuemne/Uimake/refs/heads/main/SoucreUiMains12.lua"))()
+
+-- Tạo Window chính
+local window = Fetching:Window({
+    Title = "Complete UI Test",
+    Logo = "4483362458", -- ID hình ảnh
+    Size = UDim2.new(0, 490, 0, 380),
+    MainColor = Color3.fromRGB(255, 64, 129),
+    DropColor = Color3.fromRGB(156, 39, 176),
+    Keybind = Enum.KeyCode.RightControl -- Phím mở/đóng
+})
+
+print("Window created!")
+
+-- ========================================
+-- TAB 1: BASIC ELEMENTS
+-- ========================================
+local basicTab = Fetching.Tab:CreateTab({
+    Title = "Basic Elements",
+    Icon = "6031075938"
+})
+
+-- Section trái
+local basicLeftSection = Fetching.Section:CreateSection({
+    Title = "Text Elements",
+    Side = "left"
+})
+
+
+local label1 = Fetching.Main:CreateLabel({
+    Title = "This is a centered label",
+    Side = "center"
+})
+
+local label2 = Fetching.Main:CreateLabel({
+    Title = "Left aligned label",
+    Side = "left"
+})
+
+local label3 = Fetching.Main:CreateLabel({
+    Title = "Right aligned label", 
+    Side = "right"
+})
+
+-- 2. Create (Text Card)
+local textCard = Fetching.Main:Create({
+    Title = "Information Card",
+    Desc = "This is a description text that can be quite long and will wrap to multiple lines if needed.",
+    Icon = "6031068421"
+})
+
+-- 3. Paragraph (RichText)
+local paragraph = Fetching.Main:Paragarp({
+    Title = "Welcome to <b>Fetching UI</b>! This library supports <i>rich text</i> formatting."
+})
+
+-- 4. Line separator
+local line1 = Fetching.Main:Line()
+
+-- 5. Icon display
+local icon1 = Fetching.Main:Icon({
+    Title = "Premium Feature",
+    Image = "6031068421",
+    Color = Color3.fromRGB(255, 215, 0)
+})
+
+-- 6. Status indicator
+local status1 = Fetching.Main:CreateSpawn({
+    Title = "Server Status: Online",
+    Color = Color3.fromRGB(76, 175, 80)
+})
+
+-- Section phải
+local basicRightSection = Fetching.Section:CreateSection({
+    Title = "Interactive Elements",
+    Side = "right"
+})
+
+-- 7. Button
+local button1 = Fetching.Main:CreateButton({
+    Title = "Click Me!",
+    Callback = function()
+        print("Button clicked!")
+        label1:Set("Button was clicked at " .. os.date("%X"))
+    end
+})
+
+-- 8. TextBox
+local textbox1 = Fetching.Main:CreateTextbox({
+    Title = "Enter Text",
+    Placeholder = "Type something...",
+    Value = "Default text",
+    ClearText = false,
+    Callback = function(text)
+        print("Text entered:", text)
+        paragraph:Set("You typed: <b>" .. text .. "</b>")
+    end
+})
+
+-- 9. Toggle
+local toggle1 = Fetching.Main:CreateToggle({
+    Title = "Enable Feature",
+    Value = false,
+    CallBack = function(state)
+        print("Toggle state:", state)
+        status1:SetColor(state and Color3.fromRGB(76, 175, 80) or Color3.fromRGB(244, 67, 54))
+        status1:SetTitle("Feature: " .. (state and "ENABLED" or "DISABLED"))
+    end
+})
+
+-- 10. ImageToggle
+local imageToggle1 = Fetching.Main:ImageToggle({
+    Title = "Visual Toggle",
+    Value = false,
+    Icon = "6031068421",
+    CallBack = function(state)
+        print("Image toggle:", state)
+        icon1:ImageColor(state and Color3.fromRGB(76, 175, 80) or Color3.fromRGB(244, 67, 54))
+    end
+})
+
+-- ========================================
+-- TAB 2: ADVANCED ELEMENTS  
+-- ========================================
+local advancedTab = Fetching.Tab:CreateTab({
+    Title = "Advanced",
+    Icon = "6031068421"
+})
+
+-- Section trái - Sliders và Selects
+local advancedLeftSection = Fetching.Section:CreateSection({
+    Title = "Value Controls",
+    Side = "left"
+})
+
+-- 11. Slider
+local slider1 = Fetching.Main:CreateSlider({
+    Title = "Speed Value",
+    Desc = "Adjust speed", 
+    Min = 0,
+    Max = 100,
+    Rounding = 1,
+    Value = 50,
+    CallBack = function(value)
+        print("Slider value:", value)
+        if game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+            game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+        end
+    end
+})
+
+-- 12. Select (với mũi tên)
+local select1 = Fetching.Main:CreateSelect({
+    Title = "Game Mode",
+    Desc = "Choose mode",
+    Value = "Normal",
+    List = {"Easy", "Normal", "Hard", "Expert", "Nightmare"},
+    Callback = function(selected)
+        print("Selected mode:", selected)
+        textCard:SetTitle("Mode: " .. selected)
+        textCard:SetDesc("You have selected " .. selected .. " difficulty mode.")
+    end
+})
+
+-- 13. Keybind
+local keybind1 = Fetching.Main:CreateKeybind({
+    Title = "Toggle Hotkey",
+    Key = Enum.KeyCode.Q,
+    Value = false,
+    Callback = function(key, state)
+        print("Keybind:", key, "State:", state)
+        toggle1:SetValue(state)
+    end
+})
+
+-- 14. Single Dropdown
+local dropdown1 = Fetching.Main:CreateDropdown({
+    Title = "Select Weapon",
+    List = {"Sword", "Bow", "Staff", "Hammer", "Dagger"},
+    Value = "Sword",
+    Multi = false,
+    Callback = function(selected)
+        print("Selected weapon:", selected)
+    end
+})
+
+-- 15. Multi Dropdown  
+local dropdown2 = Fetching.Main:CreateDropdown({
+    Title = "Enable Features",
+    List = {"Auto-Farm", "Anti-AFK", "Speed Boost", "Jump Boost", "ESP"},
+    Value = {"Auto-Farm"},
+    Multi = true,
+    Callback = function(selected)
+        print("Enabled features:", table.concat(selected, ", "))
+    end
+})
+
+-- Section phải - Media Elements
+local advancedRightSection = Fetching.Section:CreateSection({
+    Title = "Media Elements",
+    Side = "right"
+})
+
+-- 16. Image display
+local image1 = Fetching.Main:Image({
+    Title = "Logo Image",
+    Image = "4483362458"
+})
+
+
+-- 18. CreateImage (Info card with image)
+local imageCard = Fetching.Main:CreateImage({
+    Title = "Server Information", 
+    Desc
